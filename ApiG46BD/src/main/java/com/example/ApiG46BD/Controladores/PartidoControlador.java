@@ -50,7 +50,7 @@ public class PartidoControlador {
         return servicio.buscarPartidoxEquipo(equipo);
     }
 
-    @DeleteMapping("/eliminar/{partido}}")
+    @DeleteMapping("/eliminar/{partido}")
     //http://localhost:8080/partido/eliminar
     public boolean eliminarPartido(@PathVariable Long partido){
         return servicio.eliminarPartido(partido);
