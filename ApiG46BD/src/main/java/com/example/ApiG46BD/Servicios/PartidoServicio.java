@@ -50,3 +50,12 @@ public class PartidoServicio {
     }
 }
 
+/*
+{
+    "categoria":"femenino",
+    "evento":"liga aguila",
+    "equipolocal":"junior",
+    "equipovisitante":"medellin",
+    "marcador":"2-0"
+}
+*/
