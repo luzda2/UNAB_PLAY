@@ -23,15 +23,15 @@ public class PartidoServicio {
 
     //metodos para buscar un partido por tipo de dato (categoría, evento o equipo)
     public ArrayList<PartidoModelo>  buscarPartidoxCategoria(){
-        return (ArrayList<PartidoModelo>) repositorio.findById(categoria);
+        return (ArrayList<PartidoModelo>) repositorio.findBycategoria(categoria);
     }
 
     public ArrayList<PartidoModelo> buscarPartidoxEvento(){
-        return (ArrayList<PartidoModelo>) repositorio.findById(evento);
+        return (ArrayList<PartidoModelo>) repositorio.findByevento(evento);
     }
     
     public ArrayList<PartidoModelo> buscarPartidoxEquipo(){
-        return (ArrayList<PartidoModelo>) repositorio.findById(equipo);
+        return (ArrayList<PartidoModelo>) repositorio.findByequipo(equipo);
     }
 
     //metodo para eliminar un partido, returna un boolena. Si elimino true, si no elimino false.
