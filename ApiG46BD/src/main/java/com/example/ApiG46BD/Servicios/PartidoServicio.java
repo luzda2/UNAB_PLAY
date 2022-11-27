@@ -1,4 +1,5 @@
 package com.example.ApiG46BD.Servicios;
+
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +23,20 @@ public class PartidoServicio {
     }
 
     //metodos para buscar un partido por tipo de dato (categoría, evento o equipo)
-    public ArrayList<PartidoModelo>  buscarPartidoxCategoria(){
+    public ArrayList<PartidoModelo>  buscarPartidoxCategoria(String categoria){
         return (ArrayList<PartidoModelo>) repositorio.findByCategoria(categoria);
     }
 
-    public ArrayList<PartidoModelo> buscarPartidoxEvento(){
+    public ArrayList<PartidoModelo> buscarPartidoxEvento(String evento){
         return (ArrayList<PartidoModelo>) repositorio.findByEvento(evento);
     }
     
-    public ArrayList<PartidoModelo> buscarPartidoxEquipo(){
-        return (ArrayList<PartidoModelo>) repositorio.findByEquipo(equipo);
+    public ArrayList<PartidoModelo> buscarPartidoxEquipo(String equipo){
+        return (ArrayList<PartidoModelo>) repositorio.findByEquipolocalOrEquipovisitante(equipo, equipo);
+    
+
     }
+    
 
     //metodo para eliminar un partido, returna un boolena. Si elimino true, si no elimino false.
     public boolean eliminarPartido(Long idPartido){
@@ -45,3 +49,4 @@ public class PartidoServicio {
         }
     }
 }
+
