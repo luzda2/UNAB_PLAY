@@ -35,7 +35,7 @@ public class PartidoServicio {
     }
 
     //metodo para eliminar un partido, returna un boolena. Si elimino true, si no elimino false.
-    public boolean eliminarUsuario(Long idPartido){
+    public boolean eliminarPartido(Long idPartido){
         if (repositorio.existsById(idPartido)){
                 repositorio.deleteById(idPartido);
                 return true;
