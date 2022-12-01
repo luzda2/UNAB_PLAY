@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+//prueba juan
 import com.example.ApiG46BD.Modelos.PartidoModelo;
 import com.example.ApiG46BD.Servicios.PartidoServicio;
 
