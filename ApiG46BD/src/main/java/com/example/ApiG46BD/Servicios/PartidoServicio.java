@@ -1,6 +1,7 @@
 package com.example.ApiG46BD.Servicios;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,10 +22,20 @@ public class PartidoServicio {
         return repositorio.save(partido);
         //metodo pre hecho del repositorio que guarda los datos que manda el cliente del usuario
     }
+    
+    // metodo buscar todos los partidos 
+     public ArrayList<PartidoModelo> consultarPartidos(){
+        return (ArrayList<PartidoModelo>) repositorio.findAll();
+     }
 
     //metodos para buscar un partido por tipo de dato (categoría, evento o equipo)
+    public Optional<PartidoModelo>  consultarPartido(Long idPartido){
+        return repositorio.findById(idPartido);
+    }
+    //metodos para buscar un partido por tipo de dato (categoría, evento o equipo)
+    
     public ArrayList<PartidoModelo>  buscarPartidoxCategoria(String categoria){
-        return (ArrayList<PartidoModelo>) repositorio.findByCategoria(categoria);
+        return repositorio.findByCategoria(categoria);
     }
 
     public ArrayList<PartidoModelo> buscarPartidoxEvento(String evento){
@@ -49,13 +60,3 @@ public class PartidoServicio {
         }
     }
 }
-
-/*
-{
-    "categoria":"femenino",
-    "evento":"liga aguila",
-    "equipolocal":"junior",
-    "equipovisitante":"medellin",
-    "marcador":"2-0"
-}
-*/

@@ -5,11 +5,19 @@ import org.springframework.data.annotation.Id;
 public class PartidoModelo {
 
     @Id
+    private Long idPartido;
     private String categoria;
     private String evento;
     private String equipolocal;
     private String equipovisitante;
     private String marcador;
+
+    public Long getidPartido(){
+        return idPartido;
+    }
+    public void setIdPartido(Long idPartido) {
+        this.idPartido = idPartido;
+    }
 
     public String getCategoria() {
         return categoria;

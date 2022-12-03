@@ -1,6 +1,7 @@
 package com.example.ApiG46BD.Controladores;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -9,10 +10,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-//prueba juan
+
+import org.springframework.web.bind.annotation.RestController;
+
+
 import com.example.ApiG46BD.Modelos.PartidoModelo;
 import com.example.ApiG46BD.Servicios.PartidoServicio;
 
+@RestController
 @RequestMapping("/partido")
 //http://localhost:8080/partido
 public class PartidoControlador {
@@ -26,12 +31,26 @@ public class PartidoControlador {
         return servicio.guardaPartido(partido);
     }
 
-    @GetMapping("/buscarpartidoxcategoria/{categoria}")
-    //http://localhost:8080/partido/buscarpartidoxcategiria
-    public ArrayList<PartidoModelo> buscarPartidoxCategoriaOptional(@PathVariable("categoria") String categoria){
-        return servicio.buscarPartidoxCategoria(categoria);
+    @GetMapping("/consultar")
+    //http://localhost:8080/partido/consultar
+    //metodo para buscar todos los partidos
+    public ArrayList<PartidoModelo> consultarPartidos(){
+        return servicio.consultarPartidos();
     }
 
+    @GetMapping("/consultarpartido/{idPartido}")
+    //http://localhost:8080/partido/consultarpartido/1
+    //metodo para consultar partido por ID de partido
+    public Optional<PartidoModelo> consultarPartido(@PathVariable("idPartido") Long idPartido){
+        return servicio.consultarPartido(idPartido);
+    }
+
+    @GetMapping("/buscarpartidoxcategoria/{categoria}")
+    //http://localhost:8080/partido/buscarpartidoxcategoria
+    public ArrayList<PartidoModelo> buscarPartidoxCategoria(@PathVariable("categoria") String categoria){
+        return servicio.buscarPartidoxCategoria(categoria);
+    }
+    
     @GetMapping("/buscarpartidoxevento/{evento}")
     //http://localhost:8080/partido/buscarpartidoxevento
     public ArrayList<PartidoModelo> buscarPartidoxEvento(@PathVariable("evento") String evento){
@@ -45,10 +64,10 @@ public class PartidoControlador {
     }
 
 
-    @DeleteMapping("/eliminar/{partido}")
+    @DeleteMapping("/eliminar/{idPartido}")
     //http://localhost:8080/partido/eliminar
-    public boolean eliminarPartido(@PathVariable Long partido){
-        return servicio.eliminarPartido(partido);
+    public boolean eliminarPartido(@PathVariable Long idPartido){
+        return servicio.eliminarPartido(idPartido);
     }
 
 }
