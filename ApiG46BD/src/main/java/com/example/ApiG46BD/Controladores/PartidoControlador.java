@@ -25,8 +25,8 @@ public class PartidoControlador {
     @Autowired
     PartidoServicio servicio;
 
-    @PostMapping("/guardar")
     @CrossOrigin(origins="*")
+    @PostMapping("/guardar")    
     //http://localhost:8080/partido/guardar
     // metodo que reciba los datos para guardarlos
     public PartidoModelo guardaPartido(@RequestBody PartidoModelo partido){
