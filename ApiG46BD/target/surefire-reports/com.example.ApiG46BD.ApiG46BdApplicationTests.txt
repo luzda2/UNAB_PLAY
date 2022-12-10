@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.example.ApiG46BD.ApiG46BdApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.43 s - in com.example.ApiG46BD.ApiG46BdApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.434 s - in com.example.ApiG46BD.ApiG46BdApplicationTests
