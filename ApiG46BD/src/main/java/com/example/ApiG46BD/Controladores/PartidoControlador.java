@@ -20,13 +20,13 @@ import com.example.ApiG46BD.Servicios.PartidoServicio;
 
 @RestController
 @RequestMapping("/partido")
-@CrossOrigin("*")
 //http://localhost:8080/partido
 public class PartidoControlador {
     @Autowired
     PartidoServicio servicio;
 
     @PostMapping("/guardar")
+    @CrossOrigin(origins="*")
     //http://localhost:8080/partido/guardar
     // metodo que reciba los datos para guardarlos
     public PartidoModelo guardaPartido(@RequestBody PartidoModelo partido){
