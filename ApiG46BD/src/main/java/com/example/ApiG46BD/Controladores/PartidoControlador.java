@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.ApiG46BD.Modelos.PartidoModelo;
 import com.example.ApiG46BD.Servicios.PartidoServicio;
 
+@CrossOrigin 
 @RestController
 @RequestMapping("/partido")
 //http://localhost:8080/partido
@@ -25,7 +26,6 @@ public class PartidoControlador {
     @Autowired
     PartidoServicio servicio;
 
-    @CrossOrigin(origins="*")
     @PostMapping("/guardar")    
     //http://localhost:8080/partido/guardar
     // metodo que reciba los datos para guardarlos
