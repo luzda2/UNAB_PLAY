@@ -20,7 +20,7 @@ import com.example.ApiG46BD.Servicios.PartidoServicio;
 
 @RestController
 @RequestMapping("/partido")
-@CrossOrigin:("*")
+@CrossOrigin("*")
 //http://localhost:8080/partido
 public class PartidoControlador {
     @Autowired
