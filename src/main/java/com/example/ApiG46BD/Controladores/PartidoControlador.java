@@ -18,9 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.ApiG46BD.Modelos.PartidoModelo;
 import com.example.ApiG46BD.Servicios.PartidoServicio;
 
-@CrossOrigin 
+
 @RestController
 @RequestMapping("/partido")
+@CrossOrigin("*") 
 //http://localhost:8080/partido
 public class PartidoControlador {
     @Autowired
